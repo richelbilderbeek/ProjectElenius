@@ -1,0 +1,2215 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Project Elenius
+\end_layout
+
+\begin_layout Author
+Richèl Bilderbeek
+\end_layout
+
+\begin_layout Date
+6 februari 2013 t/m 9 juni 2013
+\end_layout
+
+\begin_layout Section
+Samenvatting
+\end_layout
+
+\begin_layout Standard
+ProjectElenius is een project waarbij onderzocht is of het softwarepakket
+ WinFACT samen met een appararaat genaamd PROFI-CASSY geschikt is voor onderzoek
+ aan meet- en regelkringen.
+ Nadat het pakket geschikt werd gevonden is een steprespons gemeten.
+ Hoe de steprespons is gemeten is gedocumenteerd met MBO leerlingen als
+ doelgroep.
+\end_layout
+
+\begin_layout Section
+Inleiding
+\end_layout
+
+\begin_layout Standard
+De heer Elenius, docent aan het Alfa College, wilde onderzocht hebben of
+ het softwarepakket WinFACT samen met een appararaat genaamd PROFI-CASSY
+ geschikt is voor onderzoek aan meet- en regelkringen.
+ Zijn uiteindelijke doel is bepaalde parameters van een meet- en regelsysteem
+ te meten, waarbij een steprespons een middel is om dit te doen.
+ Het uiteindelijke doel van de heer Elenius gaat voorbij de omvang van dit
+ project: eerst moet de haalbaarheid van zijn einddoel getoets worden.
+\end_layout
+
+\begin_layout Standard
+Daar de auteur van dit verslag graag met zijn laptop met Lubuntu als operating
+ system (een Linux distributie) wilde werken (in plaats van de tragere Windows
+ computer), is eerst onderzocht of het Windows programma WinFACT ook met
+ WINE werkt.
+ Nadat WinFACT juist werkte, is gekeken hoe deze kan samenwerken met de
+ PROFI-CASSY: een kastje dat met USB op een computer kan worden aangesloten
+ en waarmee echte (uit de fysieke wereld) meetwaarden het programma binnen
+ kunnen komen.
+ De meetwaarden werden gehaald uit de stuurkast van een meet- en regelkring.
+ Om te voorkomen dat de bedrading van deze stuurkast mogelijk verstoord
+ zou kunnen worden, is een kastje ingebouwd, waar de leerlingen direct hun
+ meetdraden in kunnen prikken.
+ Vervolgens is een meting aan een steprespons gedaan en het resultaat in
+ een grafiek gezet.
+\end_layout
+
+\begin_layout Standard
+Samengevat: de beantwoorde deelvragen van dit project zijn:
+\end_layout
+
+\begin_layout Itemize
+Kan WinFact onder WINE onder Linux werken?
+\end_layout
+
+\begin_layout Itemize
+Hoe kan WinFact de gebruikte randapparatuur herkennen?
+\end_layout
+
+\begin_layout Itemize
+Hoe moet de bedrading van de bestaande schakelkast worden aangepast opdat
+ gemakkelijk gemeten kan worden?
+\end_layout
+
+\begin_layout Itemize
+Hoe een meting te doen? Dit is tevens eindproduct 1.
+\end_layout
+
+\begin_layout Itemize
+Hoe ziet een gemeten steprespons eruit? Dit is tevens eindproduct 2.
+\end_layout
+
+\begin_layout Subsection
+Eindproducten
+\end_layout
+
+\begin_layout Standard
+Het eindprodukt bestaat uit twee onderdelen:
+\end_layout
+
+\begin_layout Enumerate
+Een handleiding hoe een steprespons te meten, in de vorm van paragraaf 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Hoe-een-meting-te-doen"
+
+\end_inset
+
+ van dit verslag
+\end_layout
+
+\begin_layout Enumerate
+Een gemeten steprespons.
+ Hierin is in een proefopstelling de input, een druk, plotsklaps veranderd
+ en worden zowel de druk als een flow gemeten.
+ Zie figuur 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Mogelijke-steprespons"
+
+\end_inset
+
+ voor een mogelijke steprespons.
+ Het uiteindelijke resultaat is figuur 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Steprespons"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename EindresultaatVoorbeeld.png
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Mogelijke-steprespons"
+
+\end_inset
+
+Mogelijke steprespons
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+BORIS
+\end_layout
+
+\begin_layout Standard
+De gebruikte software om aan de proefopstelling te meten is het programma
+ BORIS, dat onderdeel is van de suite WinFACT, gemaakt door Kahlert BV.
+ BORIS is vooral bedoeld om electrische schakelingen te simuleren.
+ Met het programma is het mogelijk om inputsignalen te genereren, schakelingen
+ te bouwen en de output zichtbaar te maken.
+ Het is echter ook mogelijk om met de fysieke wereld verbinding te maken
+ en zo meetwaarden uit de werkelijkheid BORIS binnen te loodsen.
+ Een mogelijkheid dit te doen is met behulp van een PROFI-CASSY.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename Boris.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Screenshot-van-BORIS"
+
+\end_inset
+
+Screenshot van BORIS
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+PROFI-CASSY
+\end_layout
+
+\begin_layout Standard
+Om data vanuit de echte wereld naar BORIS te sturen, wordt de PROFI-CASSY
+ van Leybold Didactic gebruikt (zie figuur 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Hardware-PROFI-CASSY"
+
+\end_inset
+
+).
+ De PROFI-CASSY heeft een 12VAC voedingsbron nodig.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename LeyboldDidacticProfiCassy.jpg
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Hardware-PROFI-CASSY"
+
+\end_inset
+
+Leybold Didactic PROFI-CASSY
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+De PROFI-CASSY kan via USB met BORIS communiceren.
+ In BORIS is een module te installeren, waardoor de PROFI-CASSY een wisselwerkin
+g met de gesimuleerde omgeving kan hebben (zie figuur 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:PROFI-CASSY-in-BORIS"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename ProfiCassyInBoris.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:PROFI-CASSY-in-BORIS"
+
+\end_inset
+
+PROFI-CASSY in BORIS
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Resultaten
+\end_layout
+
+\begin_layout Standard
+Antwoord op de deelvragen:
+\end_layout
+
+\begin_layout Subsection
+Kan WinFact onder WINE onder Linux werken?
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Kan-WinFact-onder-WINE-onder-Linux-werken"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+WinFACT 8 kan niet met al zijn functionaliteit onder WINE onder Linux werken.
+ BORIS start goed op en de help file is in te zien.
+ Elementen die grafieken tonen (en die dit doen in een apart venster (wellicht
+ de oorzaak van de fout)) doen het programma bevriezen.
+ Dit is een bij WINE bekende fout.
+ Om WinFact met grafieken te gebruiken zal een computer met Windows gebruikt
+ moeten worden.
+ Onbekend is of er fouten optreden als de gemeten data direct naar bestand
+ wordt geschreven.
+\end_layout
+
+\begin_layout Subsection
+Hoe kan WinFact de gebruikte randapparatuur herkennen?
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Hoe-kan-WinFact-de-gebruikte-randapparatuur-herkennen"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Download de driver van 
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://www.kahlert.com/web/english/e_download.php
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename KahlertDownloadDriver.png
+	scale 25
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Kahlert website waar de CASSY driver (zie onderaan) gedownload kan worden
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Installeer de driver op de standaard plaats "C:/Program Files/Kahlert/WinFACT
+ 6".
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename BorisDriverInstall.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Het installeren van de driver gaat eenvoudig via een WinShield installer
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Voeg het pad van de driver toe: Kies 'Optionen | Anpassen' voor het 'Anpassen'
+ dialoog.
+ Ga naar de tab 'Suchverzeichnisse'.
+ Navigeer in het onderste gedeelte naar "C:/Program Files/Kahlert/WinFACT
+ 6/UserDLLs" en sleep deze folder naar de lijst erboven.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename BorisSetPath.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Het 'Anpassen' dialoog
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Nu is in BORIS de PROFI-CASSY te kiezen (zie figuur 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:PROFI-CASSY-in-BORIS"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Subsection
+Hoe moet de bedrading van de bestaande schakelkast worden aangepast opdat
+ gemakkelijk tegelijk een druk en een flow gemeten kan worden?
+\end_layout
+
+\begin_layout Standard
+Het bedradingsschema is te zien in figuur 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Bedradingsschema"
+
+\end_inset
+
+.
+ De weerstand tussen de twee negatieve polen van de PLC's heeft een onbekende
+ weerstand.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename MtProjectEleniusDrawingCorrect.png
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Bedradingsschema"
+
+\end_inset
+
+Bedradingsschema
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Eindproducten
+\end_layout
+
+\begin_layout Standard
+Hierna volgen de twee eindproducten: 
+\end_layout
+
+\begin_layout Itemize
+hoe een meting te doen?
+\end_layout
+
+\begin_layout Itemize
+hoe ziet een gemeten steprespons eruit?
+\end_layout
+
+\begin_layout Subsection
+Hoe een meting te doen?
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Hoe-een-meting-te-doen"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Deze stap bestaat uit twee onderdelen: het hardwarematig aansluiten en hier
+ softwarematig op reageren.
+ Hieronder worden twee manieren beschreven om toegang tot de meetwaarden
+ te krijgen: door een grafiek te tonen, danwel de meetwaarden naar bestanden
+ weg te schrijven.
+ In paragraaf 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Analyse-ouput"
+
+\end_inset
+
+ wordt beschreven de weggeschreven meetwaarden te analyseren.
+\end_layout
+
+\begin_layout Subsubsection
+Aansluiten hardware
+\end_layout
+
+\begin_layout Standard
+Sluit de PROFI-CASSY als volgt aan:
+\end_layout
+
+\begin_layout Itemize
+Voeding
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Voorzie de PROFI-CASSY van 12 Volt wisselspanning.
+ De ingang in de PROFI-CASSY bevindt zich in de linkeronderhoek van het
+ apparaat.
+ Boven de PROFI-CASSY voedingsingang zit een rood lampje dat zal gaan branden
+ bij de juiste spanning.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Computer
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Sluit de PROFI-CASSY via haar USB poort aan op een PC
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Kastje ingebouwd in schakelkast
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Verbind de rode plus pool van FICA_1 PV met input A van de PROFI-CASSY
+\end_layout
+
+\begin_layout Itemize
+Verbind de rode plus pool van FICA_1 OUT met input B van de PROFI-CASSY
+\end_layout
+
+\begin_layout Itemize
+Verbind de negatieve polen van FICA_1 PV en FICA_1 OUT met elkaar
+\end_layout
+
+\begin_layout Itemize
+Verbind de negatieve polen van FICA_1 PV en FICA_1 OUT met de blauwe ingang
+ van de PROFI-CASSY
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename AansluitingLeerlingen.png
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Aansluiting PROFI-CASSY
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Instellen software om meetwaarden met grafieken te tonen
+\end_layout
+
+\begin_layout Standard
+Om de waarden te visualeren, stel de software in BORIS als volgt in:
+\end_layout
+
+\begin_layout Itemize
+Zet een PROFI-CASSY blok op het canvas, door onder 'User' met de linkermuisknop
+ een PROFI-CASSY icoon te klikken
+\end_layout
+
+\begin_layout Itemize
+Zet een grafiek op het canvas, door onder 'Senken' een keer met de linkermuiskno
+p op een 'Zeitverlauf' te klikken
+\end_layout
+
+\begin_layout Itemize
+Verbind van de PROFI-CASSY poort A met Zeitverlauf ingang 1, door met de
+ linkermuisknop op poort A van de PROFI-CASSY te klikken.
+ Er verschijnt nu een verbindingslijn.
+ Klik met de linkermuisknop op ingang 1 van de grafiek.
+\end_layout
+
+\begin_layout Itemize
+Verbind van de PROFI-CASSY poort B met Zeitverlauf ingang 2, door met de
+ linkermuisknop op poort B van de PROFI-CASSY te klikken.
+ Er verschijnt nu een verbindingslijn.
+ Klik met de linkermuisknop op ingang 2 van de grafiek.
+\end_layout
+
+\begin_layout Itemize
+Stel de parameters van de meting in door met de linkermuisknop te klikken
+ op 'Simulationsparameter', of in het menu te navigeren naar 'Simulation
+ | Parameter'.
+ De checkbox 'Echtzeit' moet aangevinkt zijn.
+ Verder moet de 'Simulationsdauer' op de gewenste tijdsduur staan, bijvoorbeeld
+ op tien seconden.
+ Met 'Schritteweitte' kan de periode tussen twee metingen worden ingesteld:
+ bijvoorbeeld een 'Schrittweite' van 0.1 seconde betekent dat BORIS 10 metingen
+ per seconden opslaat.
+\end_layout
+
+\begin_layout Itemize
+Start de simulatie ('Simulation | Start') of RIGHT-CTRL+S
+\end_layout
+
+\begin_layout Standard
+Merk op dat de grafiek niet direct zichtbaar wordt, maar dat deze eerst
+ geminimaliseerd in de linker, zie figuur 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Waar-zit-de-grafiek"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename 20130417_Zeitverlauf.png
+	scale 20
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Waar-zit-de-grafiek"
+
+\end_inset
+
+Waar zit de grafiek? In de linkeronderhoek
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Instellen software om meetwaarden naar bestand te schrijven
+\end_layout
+
+\begin_layout Standard
+Om de waarden naar bestand te schrijven, doe dan het volgende:
+\end_layout
+
+\begin_layout Itemize
+Zet een PROFI-CASSY blok op het canvas, door onder 'User' met de linkermuisknop
+ een PROFI-CASSY icoon te klikken
+\end_layout
+
+\begin_layout Itemize
+Zet twee keer een naar-bestand-wegschrijf-blok op het canvas, door onder
+ 'Senken' twee keer met de linkermuisknop op een 'File Output' te klikken
+\end_layout
+
+\begin_layout Itemize
+Verbind van de PROFI-CASSY poort A met Zeitverlauf 'File Output 1', door
+ met de linkermuisknop op poort A van de PROFI-CASSY te klikken.
+ Er verschijnt nu een verbindingslijn.
+ Klik met de linkermuisknop op ingang 1 van de 'File Output 1'.
+\end_layout
+
+\begin_layout Itemize
+Stel de naam van het eerste output bestand in door op 'File Output 1' te
+ dubbelklikken.
+ Kies bij 'Ausgavedatei' de bestandsnaam: 'FICA_1_PV.CSV'.
+ Kies bij 'Speichern der Daten' voor 'Offline nach Simulationsende'.
+ Zie figuur 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:FileOutput"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Verbind van de PROFI-CASSY poort B met Zeitverlauf 'File Output 2', door
+ met de linkermuisknop op poort B van de PROFI-CASSY te klikken.
+ Er verschijnt nu een verbindingslijn.
+ Klik met de linkermuisknop op ingang 1 van de 'File Output 2'
+\end_layout
+
+\begin_layout Itemize
+Stel de naam van het tweede output bestand in door op 'File Output 2' te
+ dubbelklikken.
+ Kies bij 'Ausgavedatei' de bestandsnaam: 'FICA_1_OUT.CSV'.
+ Kies bij 'Speichern der Daten' voor 'Offline nach Simulationsende'.
+ Zie figuur 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:FileOutput"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Stel de parameters van de meting in door met de linkermuisknop te klikken
+ op 'Simulationsparameter', of in het menu te navigeren naar 'Simulation
+ | Parameter'.
+ De checkbox 'Echtzeit' moet aangevinkt zijn.
+ Verder moet de 'Simulationsdauer' op de gewenste tijdsduur staan, bijvoorbeeld
+ op tien seconden.
+ Met 'Schritteweitte' kan de periode tussen twee metingen worden ingesteld:
+ bijvoorbeeld een 'Schrittweite' van 0.1 seconde betekent dat BORIS 10 metingen
+ per seconden opslaat.
+\end_layout
+
+\begin_layout Itemize
+Start de simulatie ('Simulation | Start') of RIGHT-CTRL+S
+\end_layout
+
+\begin_layout Itemize
+De data zal worden weggeschreven naar de bestanden 'FICA_1_PV.CSV' en 'FICA_1_OUT.
+CSV'
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename MtProjectEleneniusFileOutput.png
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:FileOutput"
+
+\end_inset
+
+Instellen 'File Output'
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Analyse ouput
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Analyse-ouput"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+BORIS schrijft de meetwaarden in de Engelse notatie naar een bestand: inplaats
+ van het getal anderhalf te schrijven als 1,5 (zegge 'een komma vijf'),
+ schrijft BORIS dit als 1.5 (zegge 'one dot five').
+\end_layout
+
+\begin_layout Standard
+Bij een computer die Engels als taal heeft, is de analyse van de output
+ simpel: de meeste gangbare spreadsheets kunnen de bestanden juist inlezen.
+\end_layout
+
+\begin_layout Standard
+Bij een computer die Nederlands als taal heeft, is het het gemakkelijkst
+ de bestanden te kopieren naar een Engelse computer.
+ 
+\end_layout
+
+\begin_layout Standard
+Misschien is er desondanks nog een probleem met de data: BORIS slaat de
+ data op met tussen de meetwaarden een tab.
+\end_layout
+
+\begin_layout Standard
+Het bestandje 'tab_to_comma.bat' converteert de twee bestanden ('FICA_1_PV.CSV'
+ en 'FICA_1_OUT.CSV') naar de (daadwerkelijke comma-seperated files) 'fica_1_pv_e
+nglish.csv' en 'fica_1_out_english.csv', door de tabs te vervangen door de
+ komma's.
+ Het programma 'sed' is hier uitermate geschikt voor.
+ Zie de listing bij algoritme 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "alg:to_english.bat"
+
+\end_inset
+
+ hoe dit precies gebeurt.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float algorithm
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+c:/Progra~1/GnuWin32/bin/sed.exe "s/
+\backslash
+t/
+\backslash
+,/g" 
+\end_layout
+
+\begin_layout Plain Layout
+
+  FICA_1_PV.CSV > fica_1_pv_english.csv 
+\end_layout
+
+\begin_layout Plain Layout
+
+c:/Progra~1/GnuWin32/bin/sed.exe "s/
+\backslash
+t/
+\backslash
+,/g" 
+\end_layout
+
+\begin_layout Plain Layout
+
+  FICA_1_OUT.CSV > fica_1_out_english.csv 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "alg:to_english.bat"
+
+\end_inset
+
+Listing van batch file 'tab_to_comma.bat'.
+ 'Program~1' is de afgekorte verie van de Windows folder 'Program Files'
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Hoe ziet een gemeten steprespons eruit?
+\end_layout
+
+\begin_layout Standard
+In figuur 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Steprespons"
+
+\end_inset
+
+ is een gemeten steprespons zichtbaar.
+ Datgeen wat lijkt op ruis, is het Hart signaal: een communicatieprotocol
+ tussen de onderdelen van de meet- en regelkring.
+ In de figuur zijn naast de meetseries met de echte meetwaarden ook het
+ low-pass gefilterde resultaat geplot.
+ Het moment dat de motor ineens aanspringt (de 'step') is duidelijk zichtbaar.
+ De respons ook.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename MtProjectEleneniusStepResponse.png
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Steprespons"
+
+\end_inset
+
+Steprespons
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Gebruikte software
+\end_layout
+
+\begin_layout Itemize
+Simulatie stroomschema's en interactie PROFI-CASSY: BORIS
+\end_layout
+
+\begin_layout Itemize
+Bedradingsschema's: LibreCAD
+\end_layout
+
+\begin_layout Itemize
+Andere tekeningen: KolourPaint
+\end_layout
+
+\begin_layout Itemize
+Spreadsheet: Gnumeric
+\end_layout
+
+\begin_layout Itemize
+Tekstprocessor: LyX
+\end_layout
+
+\begin_layout Itemize
+Tekst naar PDF conversie: pdflatex
+\end_layout
+
+\begin_layout Section
+Logboek
+\end_layout
+
+\begin_layout Subsection
+6 februari 2013
+\end_layout
+
+\begin_layout Standard
+Introductie, ontdekking dat PROFI-CASSY waarschijnlijk 12 VAC voeding nodig
+ heeft, email verzonden naar Leybold Didactic.
+ Op 9 juni 2013 is nog steeds geen reactie hierop geweest.
+\end_layout
+
+\begin_layout Subsection
+13 februari 2013
+\end_layout
+
+\begin_layout Standard
+Stekker gesoldeerd van voedingsbron naar PROFI-CASSY.
+ Lampje boven 12 VAC gaat aan.
+ Computer detecteerd PROFI-CASSY niet.
+ Download PROFI-CASSY drivers (bestaan alleen voor Windows).
+ Paden van drivers gezet
+\end_layout
+
+\begin_layout Subsection
+20 februari 2013
+\end_layout
+
+\begin_layout Standard
+Voorjaarsvakantie.
+\end_layout
+
+\begin_layout Subsection
+27 februari 2013
+\end_layout
+
+\begin_layout Standard
+Dit verslag verbeterd opdat de heer Elenius de huidige voortgang kan controleren.
+\end_layout
+
+\begin_layout Subsection
+6 maart 2013
+\end_layout
+
+\begin_layout Standard
+Bij het gebruik van BORIS blijkt het programma te hangen bij het toevoegen
+ van een metend element.
+ De theorie is dat dit ligt aan WINE: er werd gewerkt vanaf een Linux computer
+ en BORIS werd daaruit geemuleerd met WINE.
+ Kijkend op de WINE site (
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://appdb.winehq.org/objectManager.php?sClass=application&iId=8521
+\end_layout
+
+\end_inset
+
+ ) blijkt dat WinFact het reeds niet deed met versie 7.
+ Er is gerapporteerd dat de gebruikte versie, versie 8, ook nog niet volledig
+ werkt.
+ De overstap werd gemaakt naar een Windows computer in het Meet- en Regeltechnie
+k vaklokaal.
+ Uit de helpfile (figuur 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Help-bij-BORIS-DEMO1"
+
+\end_inset
+
+) werd met succes 'DEMO1' nagedaan (figuur 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Resultaat-van-BORIS-DEMO1"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename BorisDemo1Help.png
+	scale 25
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Help-bij-BORIS-DEMO1"
+
+\end_inset
+
+Help bij BORIS DEMO1
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename BorisDemo1.png
+	scale 25
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Resultaat-van-BORIS-DEMO1"
+
+\end_inset
+
+Resultaat van BORIS DEMO1
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Vervolgens is de PROFI-CASSY aangesloten.
+ Als ingangssignaal is een variabele (wissel- en) gelijkpaningsbron gebruikt.
+ De (rode) positieve uitgang van de spanningsbron werd verbonden met de
+ (rode) analoge input A.
+ De (blauwe) negatieve uitgang van de spanningsbron werd verbonden met de
+ (blauwe) analoge aarde.
+ De PROFI-CASSY zelf werd voorzien van iets meer dan de benodigde 12 VDC
+ en met USB verbonden met de Windows computer.
+ Vervolgens werd de PROFI-CASSY in de simulatie aangestuurd.
+ Het programma werd veranderd zoals in figuur 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:BORIS-PROFI-CASSY1"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename BorisProfiCassy1.png
+	scale 25
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:BORIS-PROFI-CASSY1"
+
+\end_inset
+
+BORIS met PROFI-CASSY
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Als de simulatie gestart werd ('Simulation starten', Rechter CTRL+S) terwijl
+ bij de variabele gelijkspanningsbron het voltage werd veranderd, wordt
+ dit voltage zichtbaar is de simulatie (figuur 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:BORIS-PROFI-CASSY1"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+De opstelling moet werkbaar aangesloten worden op de schakelkast.
+ Aan de hand van de tekeningen zijn de klemmen van de te meten variabelen
+ gevonden: X3 klem 1 en 2 gaan naar de flowmeter, van de 'Analog Output'
+ PLC gaan de kanalen 3 en 5 naar de aansturing van de pomp.
+\end_layout
+
+\begin_layout Standard
+Planning 13 maart:
+\end_layout
+
+\begin_layout Itemize
+Bezoek Manfred Grid voor handige klemmenstrook aansluiting voor meetpennen
+\end_layout
+
+\begin_layout Itemize
+Overleg Martin Voogd om de 'Analog Output' PLC uitgangen via de klemmenstroom
+ om te leiden, opdat ook dit met meetpennen te meten wordt
+\end_layout
+
+\begin_layout Itemize
+Computer opbouwen op tafel
+\end_layout
+
+\begin_layout Itemize
+Karakteristiek meten
+\end_layout
+
+\begin_layout Subsection
+13 maart 2013
+\end_layout
+
+\begin_layout Standard
+Veel overleg heeft reeds tussen de docenten onderling plaatsgevonden.
+ De heer Voogd heeft een kastje laten maken om de verbindingen mee te maken
+ met 3x twee gaten.
+ Het verbinden van de bedrading en dit kastje zal voor volgende week geschieden.
+ Het geplande overleg met de heer Grid is overbodig geworden.
+ Het opbouwen van de computer zal ook naar volgende week verplaatst worden.
+\end_layout
+
+\begin_layout Standard
+Bedradingsschema getekend (zie figuur 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:InitialWireSchematic"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename MtProjectEleniusInitialDrawing.png
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:InitialWireSchematic"
+
+\end_inset
+
+Bedradingsschema
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+20 maart 2013
+\end_layout
+
+\begin_layout Standard
+De bedrading is nog niet geinstalleerd in de schakelkast.
+ Hierdoor worden de werkzaamheden naar de volgende week verschoven.
+\end_layout
+
+\begin_layout Subsection
+27 maart 2013
+\end_layout
+
+\begin_layout Standard
+De bedrading is nog niet geinstalleerd in de schakelkast.
+ Hierdoor worden de werkzaamheden naar de volgende week verschoven.
+ In de plaats werd een Pc-Lab 2000 LT digitale oscilloscoop aangesloten.
+ Installatie gaat soepel op een Windows Vista PC.
+ De functiegenerator werkt simpel: elke golfvorm is in te stellen en op
+ het scherm wordt meteen een voorbeeld getoond.
+ De oscilloscoopfunctie werkt precies zoals een gewone oscilloscoop.
+ Dit is getest door de functiegenerator op kanaal 1 aan te sluiten van de
+ scope: de gegenereerde golf werd op het scherm getoond.
+ De verbinding weg laten vallen zorgt er -zoals verwacht- voor dat de scope
+ geen golf meer toont.
+ Bijkomende voordeel dat de scope via een computer gaat, is het op kunnen
+ nemen van een historie.
+ Als de scope op 'Run' staat, maakt deze een historie aan, tot 'Run' weer
+ wordt uitgezet: nu is scrollen door de historie mogelijk.
+\end_layout
+
+\begin_layout Standard
+De software behorende bij de scope werkend krijgen onder Linux (met distro
+ Lubuntu) is niet mogelijk: de USB verbinding tussen computer en scope wordt
+ niet gedetecteerd.
+\end_layout
+
+\begin_layout Subsection
+3 april 2013
+\end_layout
+
+\begin_layout Standard
+De bedrading is nog niet geinstalleerd in de schakelkast.
+ Hierdoor worden de werkzaamheden naar de volgende week verschoven.
+\end_layout
+
+\begin_layout Subsection
+10 april 2013
+\end_layout
+
+\begin_layout Standard
+De bedrading is nog niet geinstalleerd in de schakelkast.
+ Hierdoor worden de werkzaamheden naar de volgende week verschoven.
+\end_layout
+
+\begin_layout Subsection
+17 april 2013
+\end_layout
+
+\begin_layout Standard
+De bedrading is geinstalleerd in de schakelkast.
+ In de schakelkast is een kastje geplaatst:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+(zwart, -) FICA_1 PV
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+(rood, +) FICA_1 PV
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+(geen functie)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+(geen functie)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+(zwart, -) FICA_1 OUT
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+(rood, +) FICA_1 OUT
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+De volgende verbindingen werden gemaakt:
+\end_layout
+
+\begin_layout Itemize
+Plus FICA_1 PV naar PROFI-CASSY input A
+\end_layout
+
+\begin_layout Itemize
+Plus FICA_1 OUT naar PROFI-CASSY input B
+\end_layout
+
+\begin_layout Itemize
+Min FICA_1 PV of Min FICA_1 OUT naar PROFI-CASSY input GND
+\end_layout
+
+\begin_layout Standard
+In BORIS werd de PROFI-CASSY niet met een grafiek, maar met een tabel verbonden
+ (zie figuur 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:BORIS-PROFI-CASSY-naar-tabel"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename 20130417_BorisTable.PNG
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:BORIS-PROFI-CASSY-naar-tabel"
+
+\end_inset
+
+BORIS: PROFI-CASSY naar tabel
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Op de control computer van de cascade regeling werd station gestart en als
+ figuur 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Station"
+
+\end_inset
+
+ ingesteld.
+ Door van LICA_1 de waarde OP te veranderen, terwijl MD op MAN staat, kan
+ de frequentieregelaar rechtstreeks bediend worden.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename 20130417_Station.png
+	scale 20
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Station"
+
+\end_inset
+
+Station
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In samenwerking met de heer Elenius werden er twee grafieken gemaakt.
+\end_layout
+
+\begin_layout Standard
+Bij de eerste grafiek werd de FICA_1 PV bijgehouden terwijl Elenius de frequenti
+eregelaar sprongsgewijs van 0% naar 50% veranderde (zie figuur 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:20130417_1"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename 20130417_1_gnumeric.png
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:20130417_1"
+
+\end_inset
+
+FICA_1 PV terwijl frequentieregelaar sprongsgewijs van 0% naar 50% veranderde
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Bij de tweede grafiek werd de FICA_1 OUT bijgehouden terwijl Elenius de
+ frequentieregelaar sprongsgewijs van 50% naar 25% veranderde (zie figuur
+ ).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename 20130417_2_gnumeric.png
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+FICA_1 OUT bij een sprong van 50% naar 25% van de frequentieregelaar
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+De afspraak is gemaakt om 1 mei de officieele meting te gaan doen.
+\end_layout
+
+\begin_layout Subsection
+29 mei 2013
+\end_layout
+
+\begin_layout Standard
+Wegens verbouwingen aan het lokaal kon pas op deze dag verder worden gegaan
+ met het project.
+ De heer Voogd meldde reeds eerder dat de 'min FICA_1 PV' en 'min FICA_1
+ OUT' onderling zijn verbonden met een weerstand, opdat beide pluspolen
+ gelijk gemeten kunnen worden.
+ Dit moet wel met een zwart kabeltje gedaan worden.
+ 
+\end_layout
+
+\begin_layout Standard
+Dus: verbind de zwarten met elkaar.
+ Zie figuur 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Bedradingsschema"
+
+\end_inset
+
+ voor het bedradingsschema.
+\end_layout
+
+\begin_layout Standard
+Om te plotten wordt een TABLE gebruikt.
+ Nadeel van de Windows computer waarop gewerkt wordt, is dat deze een Nederlands
+talige Excel heeft geinstalleerd, waardoor gegevens niet goed geplot kunnen
+ worden: '3.000' (het getal drie) wordt '3000' (het getal drieduizend) en
+ '3.10' (zegge 'drie punt tien') wordt '3,10' (zegge 'drie komma tien').
+ Ook werd zichtbaar dat in de data een hoogfrequente ruis zit, dit is vermoedeli
+jk het Hart communicatie protocol.
+ Dit zal er waarschijnlijk met een alfa filter (ook wel: 'low pass filter')
+ uitgehaald kunnen worden.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename 20130528_data.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:data20130528"
+
+\end_inset
+
+De gemeten data van 2013-05-28, met alfa filtering (
+\begin_inset Formula $\alpha=0.1$
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+6 juni 2013
+\end_layout
+
+\begin_layout Standard
+Om de Engelse Excel bestanden om te zetten naar een Nederlands formaat,
+ kan 'sed' (een cross-platform tool) gebruikt worden.
+ De volgende regel vervangt alle punten door komma's:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+sed 's/
+\backslash
+./,/g' in_filename.txt > out_filename.txt
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Deze regel is getest op een Linux computer.
+ 'Sed for Windows' wordt op een USB stick gezet en meegenomen naar het Alfa
+ College.
+ Ook wordt een Windowsversie van Gnumeric meegenomen.
+\end_layout
+
+\begin_layout Standard
+Bekeken is hoe de data van 2013-05-28 er uitziet na een alfa-filtering.
+ Dit ziet er redelijk uit, zie figuur 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:data20130528"
+
+\end_inset
+
+.
+ Onderstaand batch-scriptje converteert succesvol een Nederlands (.CSV) bestand
+ naar een Engels formaat.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+c:/Progra~1/GnuWin32/bin/sed.exe "s/,/
+\backslash
+./g" FICA_1_PV.CSV > fica_1_pv_english_tmp.csv 
+\end_layout
+
+\begin_layout Plain Layout
+
+c:/Progra~1/GnuWin32/bin/sed.exe "s/,/
+\backslash
+./g" FICA_1_OUT.CSV > fica_1_out_english_tmp.csv 
+\end_layout
+
+\begin_layout Plain Layout
+
+c:/Progra~1/GnuWin32/bin/sed.exe "s/
+\backslash
+t/
+\backslash
+,/g" fica_1_pv_english_tmp.csv > fica_1_pv_english.csv 
+\end_layout
+
+\begin_layout Plain Layout
+
+c:/Progra~1/GnuWin32/bin/sed.exe "s/
+\backslash
+t/
+\backslash
+,/g" fica_1_out_english_tmp.csv > fica_1_out_english.csv 
+\end_layout
+
+\begin_layout Plain Layout
+
+del fica_1_pv_english_tmp.csv
+\end_layout
+
+\begin_layout Plain Layout
+
+del fica_1_out_english_tmp.csv
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Na een aantal testen wordt de juiste steprespons (in echte tijd) gemeten.
+ Zie figuur 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Steprespons"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+Appendix: email aan Leybold Didactic
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status collapsed
+
+\begin_layout Plain Layout
+from: Richel Bilderbeek <richelbilderbeek@gmail.com> 
+\end_layout
+
+\begin_layout Plain Layout
+to: info@ld-didactic.de 
+\end_layout
+
+\begin_layout Plain Layout
+date: 7 February 2013 06:02
+\end_layout
+
+\begin_layout Plain Layout
+subject: PROFI-CASSY Stromquelle
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+Beste(r) Leybold Mitarbeiter(in),
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+Ich habe einer PROFI-CASSY zu meiner Verfuegung, aber keiner 12V Wechselstrom
+ Adapter.
+ Ich siehe dass es auch ein U_in und Erde von 6...30V Gleichspannung gibt.
+ Wenn ich diese nuetze, siehe ich leider nicht dass die PROFI-CASSY richtig
+ wirkt.
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+Ich habe geguckt aufs Internet, aber ich koennte nicht die Antwoerte meinen
+ Fragen finden.
+ Das beste das ich fand was http://www.ld-didactic.de/index.php?id=ld-artikel&a=524
+016&L=2 .
+ Weil dass nicht reichte, bitte ich Ihnen die Antwoerte auf meine Fragen.
+ 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+Meine Fragen sind: 
+\end_layout
+
+\begin_layout Enumerate
+Gibt es nur die Moeglichkeit mit ein 12V Wechselstrom Adapter die PROFI-CASSY
+ an zu schliessen? 
+\end_layout
+
+\begin_layout Enumerate
+So nein, wo koennte ich das finden auf Internet? 
+\end_layout
+
+\begin_layout Enumerate
+So nein, wie zeigt die PROFI-CASSY dass er wirkt?
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+Ich danke Ihnen,
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+Richel Bilderbeek
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

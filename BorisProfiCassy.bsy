@@ -1,0 +1,91 @@
+[Version]
+8.1.1.435
+[File Access]
+0   
+41339
+! 
+! 
+! 
+! 
+! 
+! PROFI-CASSY 1
+! Richel Bilderbeek
+! 
+[Block Count]
+2
+[Block #0]
+364   ZEITVERLAUF
+ZEITVERLAUF
+100 0 171 101  100
+4
+0
+0 0 0   0   0
+0
+ 0.00000000000000E+0000    1.00000000000000E+0001
+-1.00000000000000E+0000    1.00000000000000E+0000   0
+-1.00000000000000E+0000    1.00000000000000E+0000   0
+-1.00000000000000E+0000    1.00000000000000E+0000   0
+1   0   1   0 420 130 368 484 1.00000000000000E+0000 10 0 1.00000000000000E+0000 10 0 1.00000000000000E+0000 10 0
+%10.5f
+1
+[Block #1]
+385   USER1
+USER1
+0 0 71 192  100
+10
+10
+0 0 0   0   0
+C:\Program Files\Kahlert\WinFACT 6\UserDLLs\ProfiCASSY.dll
+*.*
+0 0 0   4
+0
+1
+1
+1
+1
+1
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+[Connection Count]
+1
+[Connection #0]
+1   1   0   1   16711680   0   0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+[Simulation Parameters]
+ 2.00000000000000E+0001    1.00000000000000E-0001   0   2   1  0   1   1   2   0   4   0
+[Logical Levels]
+ 0.00000000000000E+0000    5.00000000000000E+0000    2.50000000000000E+0000
+[Frame Count]
+0
+[Optimization Parameters Count]
+0
+[Optimization Control Parameters]
+20   5   100   3   10   1   10   1   12345
+ 1.00000000000000E+0000    0.00000000000000E+0000    0.00000000000000E+0000
+OPT.DAT
+0
+1
+[Batch Parameters Count]
+0
+[Global Parameters]
+0
+[Message Options]
+BORIS.MSG
+[User Background Bitmap]
+0
+
+[Scrollbars]
+0   0

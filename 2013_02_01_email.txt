@@ -1,0 +1,102 @@
+Van: Jörg Kahlert [mailto:jk@kahlert.com] 
+Verzonden: woensdag 19 december 2012 9:14
+Aan: Elenius, Harry
+Onderwerp: AW: Hardware fuer Regeltechnische versuche
+ 
+Sehr geehrter Herr Elenius,
+ 
+beiliegend wie angekündigt weitere Dateien:
+ 
+- In der Datei ‚Driver.zip’ befinden sich die Treiber für das ProfiCASSY-Interface und das K8055-Interface. Kopieren Sie nach der Installation der WinFACT-Testversion alle Dateien aus dem ZIP-File in das Unterverzeichnis ‚UserDLLs’ Ihrer WinFACT-Installation (normalerweise ‚c:\program files\kahlert\winfact 8\userdlls’). Anschließend stehen Ihnen die Interface-Blöcke auf der ‚User’-Palette der Systemblockbibliothek von BORIS zur Verfügung (siehe Screenshot ‚Treiber.bmp’!)
+ 
+- In den drei PDF-Dateien finden Sie Beispielanwendungen für das ProfiCASSY-Interface zur Regelung realer Strecken
+ 
+- Die Datei ‚ProfiCASSY-Demo.bsy’ können Sie benutzen, um mit BORIS über das ProfiCASSY-Interface eine Sprungantwort (z. B. von Ihrer Füllstandsstrecke) einzulesen
+ 
+- Die Datei ‚Lauflicht_K8055.bsy’ verdeutlicht Ihnen den Einsatz des K8055-Interfaces am Beispiel eines Lauflichts.
+ 
+Falls Sie Fragen haben oder Hilfe brauchen, melden Sie sich bitte.
+ 
+Mit freundlichen Grüßen
+ 
+Jörg Kahlert
+ 
+---------------------------------------------
+Dr.-Ing. Jörg Kahlert
+Ingenieurbüro Dr. Kahlert
+Ludwig-Erhard-Str. 45
+D-59065 Hamm
+Tel. 02381/926996
+Fax 02381/926997
+www.kahlert.com
+Von: Elenius, Harry [mailto:h.elenius@alfa-college.nl] 
+Gesendet: Donnerstag, 13. Dezember 2012 15:04
+An: jk@kahlert.com
+Betreff: Hardware fuer Regeltechnische versuche
+ 
+Sehr geehter Herr Kahlert,
+ 
+Wie vereinbart  anbei meine Anlieferadresse fuer die Hardware um BORIS auf unsere Anlagen an zu schliessen.
+ 
+Alfa-College Techniek
+Admiraal de Ruyterlaan 2
+9726 GR Groningen
+t.a.v Herrn H.Elenius
+ 
+ 
+Tel: 0031 (+50) 597 3400
+MVG
+ 
+Harry Elenius
+ 
+Dozent M&R
+
+
+Van: Jörg Kahlert [mailto:jk@kahlert.com] 
+Verzonden: dinsdag 18 december 2012 10:30
+Aan: Elenius, Harry
+Onderwerp: AW: Hardware fuer Regeltechnische versuche
+ 
+Sehr geehrter Herr Elenius,
+ 
+eine WinFACT 8-Testversion zum Download finden Sie hier:
+ 
+www.kahlert.com/temp/wf8studtest.zip
+ 
+Das Passwort zum Entpacken lautet „Elenius“. Die Software ist bis zum 31.03.2013 lauffähig. Es handelt sich dabei um die deutschsprachige Version; eine englischsprachige Version ist bei Bedarf ebenfalls verfügbar.
+ 
+Die Treiber für die beiden Interfaces, die wir Ihnen zugeschickt haben, sowie Beispielprogramme und Anschlusspläne erhalten Sie in Kürze mit einer weiteren Mail.
+ 
+Mit freundlichen Grüßen
+ 
+Jörg Kahlert
+ 
+---------------------------------------------
+Dr.-Ing. Jörg Kahlert
+Ingenieurbüro Dr. Kahlert
+Ludwig-Erhard-Str. 45
+D-59065 Hamm
+Tel. 02381/926996
+Fax 02381/926997
+www.kahlert.com
+Von: Elenius, Harry [mailto:h.elenius@alfa-college.nl] 
+Gesendet: Donnerstag, 13. Dezember 2012 15:04
+An: jk@kahlert.com
+Betreff: Hardware fuer Regeltechnische versuche
+ 
+Sehr geehter Herr Kahlert,
+ 
+Wie vereinbart  anbei meine Anlieferadresse fuer die Hardware um BORIS auf unsere Anlagen an zu schliessen.
+ 
+Alfa-College Techniek
+Admiraal de Ruyterlaan 2
+9726 GR Groningen
+t.a.v Herrn H.Elenius
+ 
+ 
+Tel: 0031 (+50) 597 3400
+MVG
+ 
+Harry Elenius
+ 
+Dozent M&R
